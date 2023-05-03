@@ -1,0 +1,1158 @@
+<html>
+  <head>
+    <title>قیمت روز تجهیزات تیراندازی</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+      }
+      body {
+        min-width: 400px;
+      }
+      #tgju-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+      }
+      #tgju-data * {
+        padding: 0.5rem;
+      }
+      .headerItem {
+        background-color: #fa8870 !important;
+        text-align: center !important;
+        font: bold large tahoma !important;
+        direction: rtl !important;
+      }
+      td.brand {
+        text-align: right !important;
+        font: bold small tahoma !important;
+        direction: rtl !important;
+        background-color: #ffff66 !important;
+        padding: 0.5rem;
+      }
+
+      .data-table thead th {
+        background-color: #e32964 !important;
+        color: #faf5f5 !important;
+      }
+      #data-header th {
+        background-color: #bd0039 !important;
+        color: #fdfbfa !important;
+        text-align: right;
+        padding: 0.5rem;
+      }
+      .data-table {
+        border-color: #d93232 !important;
+      }
+      body .tgju-copyright {
+        display: none !important;
+      }
+      #product-title {
+        margin: 10 0 10 0;
+        color: #bd0039;
+        text-align: center;
+        font: bold large tahoma;
+        direction: rtl;
+      }
+      #product-title-1 {
+        color: #bd0039;
+        text-align: center;
+        font: tahoma;
+        direction: rtl;
+      }
+      .accordion-body {
+        background-color: rgb(226, 226, 226);
+        transform: 0.6s;
+      }
+      .itemProduct:hover {
+        background-color: rgb(211, 208, 208);
+        cursor: pointer;
+      }
+      .accordion-button:not(.collapsed) {
+        color: rgb(57, 54, 54) !important;
+      }
+      .tgju-widget-table th {
+        background-color: #e32964;
+        color: white;
+        
+      }
+      .tgju-widget-table tr td{
+        border-top: 1px solid black !important
+        
+      }
+   .containerDateNowPara{
+    background-color: rgb(183, 230, 176);
+   }
+    </style>
+    <!-- start bootStrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <!-- end bootStrap -->
+  </head>
+  <body dir="rtl">
+    <p id="product-title">قیمت روز تجهیزات تیراندازی تفنگ بادی</p>
+
+    <p id="product-title-1">
+      تفنگ بادی - دوربین تفنگ - رنج فایندر - دوربین شکاری - کرنوگراف - رست
+      تیراندازی
+    </p>
+    <p id="product-title">www.IRBR.ir</p>
+    <div class="col-12  pe-2   ">
+      <div class="  d-flex col-md-3 col-sm-4 col-6 p-2 align-items-center containerDateNowPara">
+        <p class="m-0 p-2  fs-6 fw-bolder DateNowPara   ">
+      <i class="bi bi-calendar2-week"></i>
+      </div>
+  </p>
+    </div>
+
+    <div class="container">
+      <tgju
+        type="market-data"
+        items="137203,137206,137205,137207,137121,137137"
+        columns="dot,low,high,time"
+        token="webservice"
+      ></tgju>
+    </div>
+    <div id="tgju-data m-0 p-0">
+      <table class="data-table p-0 table-hover table table-borderless m-0">
+        <thead id="data-header">
+          <tr>
+            <th class="col-12 pe-3 text-end">
+              <!-- <div class="col-7">نام محصول</div> -->
+              نام محصول
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          ``
+        </tbody>
+        `
+      </table>
+    </div>
+    <div
+      class="accordion mt-0 pt-0 accordion-flush"
+      id="accordionExample"
+    ></div>
+  
+
+    </div>
+    <script src="https://api.tgju.org/v1/widget/v2" defer></script>
+    <script>
+
+
+const containerElement = document.querySelector(".container");
+      const observer = new MutationObserver(function (mutationsList) {
+        for (let mutation of mutationsList) {
+          for (let removedNode of mutation.removedNodes) {
+            if (removedNode.nodeName === "TGJU") {
+              // tgju element has been removed, widget has loaded
+              const tableElement = document.querySelector(".nf");
+              let priceDollar = tableElement.innerHTML;
+              priceDollar = priceDollar.replace(",", "");
+              priceDollar = Number(priceDollar);
+              dollar = priceDollar;
+              generateAccordionItems(dollar);
+
+              // console.log(priceDollar); // log the table element
+              observer.disconnect(); // stop the observer
+              break;
+            }
+          }
+        }
+      });
+      observer.observe(containerElement, { childList: true });
+
+
+
+      let PriceDollarElem = document.querySelector("#PriceDollarElem");
+      let accordionExample = document.querySelector("#accordionExample");
+      let test = document.querySelector(".test");
+      let lastUpdatePriceDollar = document.querySelector(
+        "#lastUpdatePriceDollar"
+      );
+
+      const date = new Date();
+      const options = {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        calendar: "persian",
+      };
+      const solarDate = date.toLocaleDateString("fa-IR", options);
+      // console.log(solarDate); // Output: "۱۴۰۰/۱/۱۹"
+      let DateNowPara = document.querySelector(".DateNowPara");
+      DateNowPara.outerHTML += " تاریخ امروز:  " + solarDate;
+      let productsArray = [
+        {
+          categorys: [
+            [
+              {
+                categoryName: "تفنگ بادی",
+                brands: [
+                  {
+                    brandName: "Air Arms",
+                    products: [
+                      {
+                        name: "ایرآرمز Air Arms TX200 MKIII Beech",
+                        price: 720,
+                        link: "address",
+                      },
+                      {
+                        name: "ایرآرمز Air Arms TX200 MKIII Walnut",
+                        price: 830,
+                        link: "address",
+                      },
+                      {
+                        name: "ایرآرمز Air Arms TX200 MKIII Walnut Left",
+                        price: 880,
+                        link: "address",
+                      },
+                      {
+                        name: "ایرآرمز Air Arms TX200 Hunter Carbine Beech",
+                        price: 720,
+                      },
+                      {
+                        name: "ایرآرمز Air Arms TX200 Hunter Carbine Walnut",
+                        price: 830,
+                      },
+                      { name: "ایرآرمز Pro Sport Beech", price: 830 },
+                      { name: "ایرآرمز Pro Sport Walnut", price: 950 },
+                      { name: "ایرآرمز S200", price: 774 },
+                      { name: "ایرآرمز FTP900", price: 2585 },
+                      { name: "ایرآرمز FTP 900  Left Hand", price: 2720 },
+                      { name: "ایرآرمز HFT500", price: 1578 },
+                      { name: "ایرآرمز S400 Rifle Beech", price: 801 },
+                      { name: "ایرآرمز S400 Rifle Walnut", price: 937 },
+                      {
+                        name: "ایرآرمز S400 Rifle Walnut Left Hand",
+                        price: 964,
+                      },
+
+                      {
+                        name:
+                          "ایرآرمز Air Arms S500 Xtra FAC Sidelever PCP Poplar Stock Single ",
+                        price: 1100,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Airgun Technology",
+                    products: [
+                      {
+                        name: "ایرگان تکنولوژی اوراگان قنداق چوب",
+                        price: 1813,
+                      },
+                      {
+                        name: "ایرگان تکنولوژی اوراگان قنداق سنتتیک",
+                        price: 1713,
+                      },
+                      {
+                        name: "ایرگان تکنولوژی اوراگان King قنداق سنتتیک",
+                        price: 1893,
+                      },
+                      {
+                        name: "ایرگان تکنولوژی ولکان2 قنداق لمینیت",
+                        price: 1666,
+                      },
+                      {
+                        name: "ایرگان تکنولوژی ولکان2 قنداق سنتتیک",
+                        price: 1533,
+                      },
+                      {
+                        name: "ایرگان تکنولوژی ولکان2 تاکتیکال قنداق چوب",
+                        price: 1666,
+                      },
+                      {
+                        name: "ایرگان تکنولوژی ولکان2 تاکتیکال قنداق سنتتیک",
+                        price: 1533,
+                      },
+                      { name: "ایرگان تکنولوژی ویکسن VIXEN", price: 1320 },
+                      { name: "ایرگان تکنولوژی ویکسن VIXEN LONG", price: 1506 },
+                    ],
+                  },
+                  {
+                    brandName: "Kalibrgun",
+                    products: [{ name: "کالیبرگان کریکت", price: 1400 }],
+                  },
+                  {
+                    brandName: "FX",
+                    products: [
+                      {
+                        name: "اف ایکس پانترا FX Panthera با لوله 50cm",
+                        price: 2200,
+                      },
+                      {
+                        name: "اف ایکس پانترا FX Panthera با لوله 60cm",
+                        price: 2250,
+                      },
+                      {
+                        name: "اف ایکس پانترا FX Panthera با لوله 70cm",
+                        price: 2300,
+                      },
+                      { name: "اف ایکس ایمپکت M3 با لوله 70", price: 2250 },
+                      { name: "اف ایکس ایمپکت M3 با لوله 60", price: 2100 },
+                      { name: "اف ایکس ایمپکت M3 کامپکت", price: 2000 },
+                      { name: "اف ایکس ماوریک Sniper", price: 1800 },
+                      { name: "اف ایکس ماوریک VP", price: 1450 },
+                      {
+                        name: "اف ایکس FX Royale 400 PCP Air Rifle Laminate",
+                        price: 1799,
+                      },
+                      {
+                        name:
+                          "اف ایکس FX Crown MKII Standard Plus PCP 600 Walnut",
+                        price: 1799,
+                      },
+                      {
+                        name: "اف ایکس FX Impact M3 600mm Barrel",
+                        price: 2100,
+                      },
+                      {
+                        name: "اف ایکس FX Impact M3 700mm Barrel",
+                        price: 2100,
+                      },
+                      { name: "اف ایکس FX Impact M3", price: 2000 },
+                    ],
+                  },
+                  {
+                    brandName: "Steyr",
+                    products: [
+                      {
+                        name: "اشتایر Steyr Challenge Field Target",
+                        price: 3380,
+                      },
+
+                      { name: "Feinwerkbau", price: "" },
+                      {
+                        name: "فینورک بائو Feinwerkbau 800X Field Target",
+                        price: 3400,
+                      },
+                      {
+                        name:
+                          "فینورک بائو Model 800 Basic Field Target 20.4 Joule",
+                        price: 2520,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Feinwerkbau",
+                    products: [
+                      {
+                        name: "فینورک بائو Feinwerkbau 800X Field Target",
+                        price: 3400,
+                      },
+                      {
+                        name:
+                          "فینورک بائو Model 800 Basic Field Target 20.4 Joule",
+                        price: 2520,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Anschutz",
+                    products: [
+                      { name: "آنشوتز Anschutz 9015 FT", price: 4640 },
+                    ],
+                  },
+                  {
+                    brandName: "Daystate",
+                    products: [
+                      { name: "دی استیت Daystate Tsar", price: 3390 },
+                      { name: "دی استیت دلتا ولف ", price: 3093 },
+                      { name: "دی استیت گریفین ", price: 2044 },
+                      { name: "دی استیت پولسار", price: 1733 },
+                      { name: "دی استیت پولسار رنگید", price: 1439 },
+                      { name: "دی استیت ردولف", price: 2239 },
+                      {
+                        name: "دی استیت Daystate Huntsman Regal XL",
+                        price: 1362,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Brocock",
+                    products: [
+                      { name: "بروکوک commander", price: 1314 },
+                      { name: "بروکوک Bantam", price: 1226 },
+                    ],
+                  },
+                  {
+                    brandName: "Diana",
+                    products: [
+                      { name: "دیانا p1000", price: 1000 },
+                      {
+                        name:
+                          "دیانا Diana Stormrider Gen2 Multi-shot PCP Air Rifle Synthetic",
+                        price: 257,
+                      },
+                      { name: "دیانا 52", price: 570 },
+                      { name: "دیانا 54", price: 710 },
+                      { name: "دیانا 56", price: 710 },
+                    ],
+                  },
+                  {
+                    brandName: "Weihrauch",
+                    products: [
+                      { name: "وایرخ 100", price: 1100 },
+                      { name: "وایرخ 97", price: 640 },
+                      { name: "وایرخ 80", price: 400 },
+                    ],
+                  },
+                  {
+                    brandName: "RAW",
+                    products: [
+                      {
+                        name:
+                          "RAW HM1000x LRT PCP Air Rifle Red Laminate RH Action",
+                        price: 2089,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Hatsan",
+                    products: [
+                      {
+                        name: "هاتسان Hatsan AT44 QE PCP Air Rifle Open Sights",
+                        price: 450,
+                      },
+                      {
+                        name:
+                          "هاتسان Hatsan Gladius Long PCP BullPup Air Rifle",
+                        price: 837,
+                      },
+                      {
+                        name:
+                          "هاتسان Hatsan Galatian Quiet Energy PCP Air Rifle, Walnut",
+                        price: 980,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Keral",
+                    products: [
+                      {
+                        name:
+                          "کرال Kral Arms Puncher Breaker Silent PCP Pellet Rifle Walnut",
+                        price: 480,
+                      },
+                      {
+                        name:
+                          "کرال Kral Arms Puncher Breaker Silent PCP Pellet Rifle Synthetic",
+                        price: 500,
+                      },
+                      {
+                        name: "کرال Kral Puncher Pro 500 PCP Air Rifle Walnut",
+                        price: 620,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Gamo",
+                    products: [
+                      { name: "گامو Gamo Coyote SE PCP Air Rifle", price: 520 },
+                    ],
+                  },
+                ],
+              },
+              {
+                categoryName: "دوربین تفنگ",
+                brands: [
+                  {
+                    brandName: "Swarovski",
+                    products: [
+                      {
+                        name: "دوربین زاورسکی Swarovski z5 5-25x52mm P LBRX",
+                        price: 1900,
+                      },
+                      {
+                        name: "دوربین زاورسکی Swarovski z3 4-12x50mm BT",
+                        price: 1700,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Athlon",
+                    products: [
+                      {
+                        name:
+                          "دوربین اشلون Athlon Argos BTR Gen II 6-24x50mm MOA",
+                        price: 388,
+                      },
+                      {
+                        name:
+                          "دوربین اشلون Athlon Optics Midas TAC 6-24x50mm FFP",
+                        price: 640,
+                      },
+                      {
+                        name: "دوربین اشلون Athlon Optics Ares ETR 4.5-30x56mm",
+                        price: 1060,
+                      },
+                      {
+                        name:
+                          "دوربین اشلون Athlon Optics Argos BTR Gen II 10-40x56mm MOA",
+                        price: 420,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Barska",
+                    products: [
+                      { name: "دوربین بارسکا Barska 6-24x44 SWAT", price: 240 },
+                      {
+                        name: "دوربین بارسکا Barska ETR 6-24x60mm IR SWAT",
+                        price: 370,
+                      },
+                      {
+                        name: "دوربین بارسکا Barska IR SWAT Extreme 10-40x50mm",
+                        price: 347,
+                      },
+                      {
+                        name:
+                          "دوربین بارسکا BARSKA 10-40x 50mm AO Varmint Long-Range Mil-Dot",
+                        price: 130,
+                      },
+                      {
+                        name:
+                          "دوربین بارسکا BARSKA 8-32x50mm IR AO Excavator Rangefinding",
+                        price: 170,
+                      },
+                      {
+                        name:
+                          "دوربین بارسکا BARSKA 40x50mm Benchmark Long Range",
+                        price: 250,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Hawke",
+                    products: [
+                      {
+                        name:
+                          "دوربین هاوک سایدویندر 30 SF IR 6.5-20x44 AO 20x Half Mil",
+                        price: 580,
+                      },
+                      {
+                        name: "دوربین هاوک ایرمکس Compact IR 6-24x50, AMX IR",
+                        price: 409,
+                      },
+                      {
+                        name: "دوربین هاوک ایرمکس 30 SF IR 8-32x50 AO",
+                        price: 500,
+                      },
+                      {
+                        name:
+                          "دوربین هاوک سایدویندر 30 SF IR 8-32x56 AO 20x Half Mil",
+                        price: 630,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Nikko Stirling",
+                    products: [
+                      {
+                        name:
+                          "دوربین نیکواسترلینگ Nikko Stirling Diamond Sportsman 10-50x60",
+                        price: 1100,
+                      },
+                      {
+                        name:
+                          "دوربین نیکواسترلینگ Nikko Stirling Target Master 10-50x60",
+                        price: 620,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Sightron",
+                    products: [
+                      {
+                        name: "دوربین سایترون Sightron SIII 10-50x60 FT",
+                        price: 1300,
+                      },
+                      {
+                        name:
+                          "دوربین سایترون Sightron SIIISS Competition 45x45 ED",
+                        price: 1085,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "March",
+                    products: [
+                      {
+                        name: "دوربین مارچ March High Master Target 48x52 SFP",
+                        price: 2050,
+                      },
+                      {
+                        name: "دوربین مارچ March Target 10-60x52 SFP",
+                        price: 2600,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Discovery",
+                    products: [
+                      {
+                        name: "دوربین دیسکاوری ED 6-24×50 SFIR FFP",
+                        price: 603,
+                      },
+                      {
+                        name: "دوربین دیسکاوری ED 3-15×50 SFIR FFP",
+                        price: 400,
+                      },
+                      {
+                        name: "دوربین دیسکاوری HD 5-25×50 SFIR SFP",
+                        price: 340,
+                      },
+                      {
+                        name: "دوربین دیسکاوری HD5-25×50 SFIR FFP",
+                        price: 452,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Konus",
+                    products: [
+                      {
+                        name: "دوربین کنوس KONUS Pro Plus 6-24x50 ",
+                        price: 212,
+                      },
+                      {
+                        name: "دوربین کنوس KONUS M30 nivel 6,5-25x44 ",
+                        price: 393,
+                      },
+                      {
+                        name: "دوربین کنوس KONUS F30 1st plane 8-32x56 ",
+                        price: 551,
+                      },
+                      {
+                        name: "دوربین کنوس KONUS M30 viewer level 10-40x52 ",
+                        price: 423,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Leupold",
+                    products: [
+                      {
+                        name:
+                          "دوربین لئوپولد Leupold Competition Series 45x45mm",
+                        price: 1500,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Vortex",
+                    products: [
+                      {
+                        name: "دوربین ورتکس Vortex Viper PST Gen II 5-25x50",
+                        price: 1000,
+                      },
+                      {
+                        name: "دوربین ورتکس Vortex Strike Eagle 5-25x56 FFP",
+                        price: 700,
+                      },
+                      {
+                        name: "دوربین ورتکس Vortex Viper HS 4-16x50 Riflescope",
+                        price: 600,
+                      },
+                      {
+                        name: "دوربین ورتکس Vortex Golden Eagle 15-60x52mm",
+                        price: 1500,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "NightForce",
+                    products: [
+                      {
+                        name:
+                          "دوربین نایت فورس NightForce Competition 15-55x52mm",
+                        price: 2400,
+                      },
+                      {
+                        name: "دوربین نایت فورس NightForce 8-32x56mm NXS",
+                        price: 1900,
+                      },
+                      {
+                        name: "دوربین نایت فورس NightForce SHV 5-20x56mm",
+                        price: 1195,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "MTC",
+                    products: [
+                      {
+                        name: "دوربین ام تی سی MTC VIPER PRO TACTICAL 5-30×50",
+                        price: 530,
+                      },
+                      {
+                        name: "دوربین ام تی سی MTC KING COBRA F1 6-24X50",
+                        price: 530,
+                      },
+
+                      { name: "March", brand: true },
+                      {
+                        name: "دوربین مارچ March Tactical 8-80x56 SFP",
+                        price: 3100,
+                      },
+                      {
+                        name: "دوربین مارچ March Tactical 10-60x52 SFP",
+                        price: 2770,
+                      },
+                      {
+                        name: "دوربین مارچ March Tactical 5-50x56 SFP",
+                        price: 3000,
+                      },
+                      {
+                        name: "دوربین مارچ March Tactical 5-32x52 SFP",
+                        price: 2850,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "Element",
+                    products: [
+                      {
+                        name:
+                          "دوربین المنت Element Optics Helix 6-24x50 SFP, EHR-1C MOA Reticle",
+                        price: 400,
+                      },
+                      {
+                        name:
+                          "دوربین المنت Element Optics Helix 6-24x50 FFP, APR-2D MOA Reticle",
+                        price: 480,
+                      },
+                      {
+                        name:
+                          "دوربین المنت Element Optics Titan 5-25x56 FFP, EHR-2D MOA Reticle",
+                        price: 800,
+                      },
+                      {
+                        name:
+                          "دوربین المنت Element Optics Nexus 5-20x50 FFP, EHR-1C MOA Reticle",
+                        price: 1500,
+                      },
+                    ],
+                  },
+                  {
+                    brandName: "CenterPoint",
+                    products: [
+                      {
+                        name:
+                          "دوربین سنترپوینت CenterPoint TAG Series IR 4-16x40 AO",
+                        price: 100,
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                categoryName: "دوربین تک چشم",
+                brands: [
+                  {
+                    brandName: "دوربین تک چشم",
+                    products: [
+                      {
+                        name:
+                          "دوربین تک چشم Vanguard Endeavor HD 20-60x82 Spotting Scope (Angled Viewing)",
+                        price: 376,
+                      },
+
+                      {
+                        name:
+                          "دوربین تک چشم هاوک Hawke Vantage 24-72x70 Spotting Scope",
+                        price: 180,
+                      },
+                      {
+                        name:
+                          "دوربین تک چشم هاوک Hawke Vantage 20-60x60 Spotting Scope",
+                        price: 146,
+                      },
+
+                      {
+                        name: "دوربین تک چشم بارسکا BARSKA 15-45x50mm",
+                        price: 126,
+                      },
+                      {
+                        name: "دوربین تک چشم بارسکا BARSKA 18-90x 88mm",
+                        price: 158,
+                      },
+                      {
+                        name: "دوربین تک چشم بارسکا BARSKA 20-60x60mm",
+                        price: 315,
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                categoryName: "دوربین دوچشمی",
+                brands: [
+                  {
+                    brandName: "دوربین دوچشمی",
+                    products: [
+                      {
+                        name: "دوربین دوچشمی Meopta Meostar 10x 32mm",
+                        price: 880,
+                      },
+                      { name: "دوربین دوچشمی BARSKA 10x 34mm WP", price: 112 },
+                      {
+                        name: "دوربین دوچشمی Steiner Military/Marine 8x30",
+                        price: 309,
+                      },
+                      {
+                        name: "دوربین دوچشمی Steiner Safari Ultrasharp 10x42",
+                        price: 450,
+                      },
+                      { name: "دوربین دوچشمی الصقر Steiner 8x30", price: 150 },
+
+                      {
+                        name: "دوربین دوچشمی لایکا leica NOCTIVID 10X42",
+                        price: 3240,
+                      },
+                      {
+                        name: "دوربین دوچشمی لایکا leica NOCTIVID 8X42",
+                        price: 3135,
+                      },
+                      {
+                        name: "دوربین دوچشمی زایس ZEISS CONQUEST 10X42 HD",
+                        price: 1380,
+                      },
+                      {
+                        name: "دوربین دوچشمی زایس ZEISS VICTORY SF 10X42",
+                        price: 2825,
+                      },
+                      {
+                        name:
+                          "دوربین دوچشمی ورتکس Vortex Optics Viper HD Roof Prism Binoculars 8x42",
+                        price: 490,
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                categoryName: "رنج فایندر (مسافت یاب)",
+                brands: [
+                  {
+                    brandName: "رنج فایندر (مسافت یاب)",
+                    products: [
+                      {
+                        name:
+                          "رنج فایندر و دوربین دو چشمی ورتکس Vortex Optics Impact Laser Rangefinders",
+                        price: 250,
+                      },
+                      {
+                        name:
+                          "رنج فایندر و دوربین دو چشمی بوشنل Bushnell Engage Hunting Laser Rangefinder",
+                        price: 230,
+                      },
+                      {
+                        name:
+                          "رنج فایندر و دوربین دو چشمی بوشنل Bushnell Trophy Xtreme Laser Rangefinder with Arc, Matte Black",
+                        price: 250,
+                      },
+                      {
+                        name:
+                          "رنج فایندر و دوربین دو چشمی لایکا Leica Rangemaster CRF 2400-R Compact Laser Rangefinder (40546)",
+                        price: 700,
+                      },
+                      {
+                        name:
+                          "رنج فایندر و دوربین دو چشمی لایکا Leica Rangemaster CRF 2800.COM Compact Laser Rangefinder (40506), Black",
+                        price: 870,
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                categoryName: "کرنوگراف",
+                brands: [
+                  {
+                    brandName: "کرنوگراف",
+                    products: [
+                      {
+                        name:
+                          "کرنوگراف اف ایکس FX Radar Pocket Wireless Chronograph",
+                        price: 200,
+                      },
+                      {
+                        name:
+                          "کرنوگراف ایرکرونی AIR CHRONY Shooting Chronograph MK3",
+                        price: 240,
+                      },
+                      {
+                        name: "کرنوگراف کالدول Caldwell Ballistic Precision",
+                        price: 170,
+                      },
+                      {
+                        name:
+                          "کرنوگراف کالدول Caldwell G2 Ballistic Precision Chronograph",
+                        price: 260,
+                      },
+                      {
+                        name:
+                          "کرنوگراف Competition Electronics ProChrono DLX Chronograph",
+                        price: 155,
+                      },
+                      {
+                        name: "کرنوگراف ACTIONUNION Airsoft Chronograph",
+                        price: 65,
+                      },
+                      {
+                        name:
+                          "کرنوگراف X-Radar Custom Chronograph Deluxe Handheld Chronograph",
+                        price: 100,
+                      },
+                      {
+                        name:
+                          "کرنوگراف XCORTECH Airsoft Shooting Chrono Chronograph New X3200 Original MK3",
+                        price: 69,
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                categoryName: "رست تیراندازی",
+                brands: [
+                  {
+                    brandName: "رست تیراندازی",
+                    products: [
+                      {
+                        name:
+                          "رست کالدول The Rock Dlx Shooting Rest and Rear Bag Combo",
+                        price: 90,
+                      },
+                      {
+                        name:
+                          "رست کالدول Rock BR Competition Front Shooting Rest",
+                        price: 145,
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                categoryName: "ساچمه تفنگ بادی",
+                brands: [
+                  {
+                    brandName: "ساچمه تفنگ بادی",
+                    products: [
+                      { name: "ساچمه تفنگ بادی 8.44 JSB Exact 4.5", price: 12 },
+                      {
+                        name: "ساچمه تفنگ بادی 8.44 JSB Exact Premium 4.5",
+                        price: 15,
+                      },
+                      {
+                        name:
+                          "ساچمه تفنگ بادی 10.34 JSB Diabolo Exact Heavy .177 Cal, 10.34 gr - 500 ct ",
+                        price: 12,
+                      },
+                      {
+                        name:
+                          "ساچمه تفنگ بادی 13.43 JSB Redesigned Monster 400pcs 4.5",
+                        price: 13,
+                      },
+                      {
+                        name:
+                          "ساچمه تفنگ بادی 15.89 JSB Match Diabolo Hades .22 Cal, 15.89 gr - 500 ct",
+                        price: 15,
+                      },
+                      {
+                        name:
+                          "ساچمه تفنگ بادی 18.13 JSB Match Diabolo Exact Jumbo Heavy .22 Cal, 18.13 Grains, Domed, 500ct",
+                        price: 13,
+                      },
+                      {
+                        name:
+                          "ساچمه تفنگ بادی 25.39 JSB Diabolo Exact Monster Redesigned .22 Cal, 25.39 gr - 200 ct",
+                        price: 12,
+                      },
+                      {
+                        name:
+                          "ساچمه تفنگ بادی 25.39 JSB KNOCK OUT PELLETS CAL. 5,5MM (200 UD)",
+                        price: 12.8,
+                      },
+                      {
+                        name:
+                          "ساچمه تفنگ بادی 33.95 JSB Diabolo Exact Jumbo Beast .22 Cal, 33.96 gr - 150 ct",
+                        price: 12,
+                      },
+                      { name: "ساچمه تفنگ بادی ۱۳.۲۷ H&N Baracuda", price: 11 },
+                      {
+                        name: "ساچمه تفنگ بادی 10.34 H&N Baracuda Hunter",
+                        price: 10,
+                      },
+                      {
+                        name: "ساچمه تفنگ بادی 8.18 H&N Sport 500pcs",
+                        price: 6.3,
+                      },
+                      {
+                        name:
+                          "ساچمه تفنگ بادی 8.64 H&N Field Target Trophy 500pcs",
+                        price: 10.25,
+                      },
+                      {
+                        name: "ساچمه تفنگ بادی 8.49 H&N Field Target 500pcs",
+                        price: 7.85,
+                      },
+                      {
+                        name:
+                          "ساچمه تفنگ بادی 8.80 H&N Field Target Trophy Power 500pcs",
+                        price: 7.17,
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          ],
+        },
+      ];
+
+      function generatedataProductElement(brands) {
+        let dataProductElement = brands.products.map((item, index) => {
+          let resultLoop = "";
+          let priceForShow = "";
+
+          if (item.price > 0) {
+            priceForShow = (item.price * dollar) / 10;
+            let numString = priceForShow.toString();
+            let result = "";
+            let len = numString.length;
+            for (let i = len - 1; i >= 0; i--) {
+              result = numString[i] + result;
+              if ((len - i) % 3 === 0 && i !== 0) {
+                result = "." + result;
+              }
+            }
+            priceForShow = result;
+          }
+
+          return (resultLoop += `<div class="itemProduct p-3  col-12  d-flex
+                    align-items-center justify-content-start flex-row-reverse"
+                          >
+                            <div
+                            dir="rtl"
+                              class=" col-5 col-sm-7  d-flex align-content-center justify-content-start text-wrap flex-wrap text-break text-end fs-6 fw-bold"
+                            >
+                             ${item.name}&nbsp;
+                             <a  href="${item.link ? item.link : ""}">معرفی</a>
+
+                            </div>
+                            <div
+                              class="pe-sm-2 col-2  col-sm-2 d-flex align-content-center justify-content-center justify-content-sm-end fs-6 "
+                            >
+                              ${item.price ? item.price + " $" : ""} 
+                            </div>
+                            <div
+                            dir="rtl"
+                              class="pe-sm-2 col-5  col-sm-3 d-flex align-content-center justify-content-start fs-6 "
+                            >
+                            ${priceForShow ? priceForShow + " تومان" : ""} 
+                              </div>
+                            </div>`);
+        });
+        return dataProductElement;
+      }
+
+      function generatecategorysAccordionItems(
+        categorys,
+        subElementsInCategory
+      ) {
+        categorys.brands.map((item , index) => {
+          let dataProductElement = generatedataProductElement(item);
+          // let elementInAccordion = `<div class="bg-warning col-12  p-2 fs-6 fw-bold text-end">${item.brandName}</div> ${dataProductElement}`;
+          let idRandom = self.crypto.randomUUID()
+          let elementInAccordion = `<div class="accordion accordion-flush " id="accordionExample2">
+                            <div class="accordion-item  col-12 mt-0 pt-0" >
+        <h2 class="accordion-header  " id="heading${idRandom}_2">
+          <button class="accordion-button headerItem bg-warning collapsed    d-flex justify-content-end  " 
+          type="button" 
+          data-bs-toggle="collapse"
+           data-bs-target="#collapse${idRandom}_2"
+            aria-expanded="true"
+             aria-controls="collapse${idRandom}_2">
+             
+             <p class="col-12 text-end m-0 fs-6 pe-3">${item.brandName}</p>
+          </button>
+        </h2>
+        <div id="collapse${idRandom}_2"
+         class="accordion-collapse collapse "
+          aria-labelledby="heading${idRandom}_2"
+           data-bs-parent="#accordionExample2">
+          <div class="accordion-body m-0 p-0">
+            ${dataProductElement}
+          </div>
+        </div>
+      </div>
+   
+    </div>`;
+          subElementsInCategory.push(elementInAccordion);
+        });
+      }
+
+      function generateAccordionItems(dollar) {
+        productsArray[0].categorys[0].map((item, index) => {
+          let subElementsInCategory = [];
+          generatecategorysAccordionItems(item, subElementsInCategory);
+          subElementsInCategory = subElementsInCategory.toString();
+          subElementsInCategory = subElementsInCategory.replace(/,/g, "");
+          accordionExample.insertAdjacentHTML(
+            "beforeend",
+            `<div class="accordion-item col-12 mt-0 pt-0" dir="ltr">
+                      <h2 class="accordion-header" id="heading${index}">
+                        <button
+                          class="headerItem accordion-button d-flex align-items-center justify-content-center collapsed "
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse${index}"
+                          aria-expanded="true"
+                          aria-controls="collapse${index}"
+                        >
+                          <p class="col-12 text-center m-0 p-0">${item.categoryName}</p>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse${index}"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading${index}"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body  p-0">
+                          
+
+        
+
+
+
+                          ${subElementsInCategory}
+                          </div>
+                     </div>
+
+            </div>`
+          );
+        });
+      }
+
+      // generateAccordionItems(dollar);
+    </script>
+  </body>
+</html>
